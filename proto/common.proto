@@ -1,0 +1,6 @@
+syntax = "proto3";
+option go_package="/common";
+package common;
+
+message Heartbeat{
+}
