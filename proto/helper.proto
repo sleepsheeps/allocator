@@ -1,0 +1,7 @@
+syntax = "proto3";
+option go_package="/helper";
+package helper;
+
+enum MsgType {
+    HeartBeat = 0;
+}
