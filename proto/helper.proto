@@ -1,5 +1,5 @@
 syntax = "proto3";
-option go_package="./helper;helper";
+option go_package="github.com/sleepsheeps/allocator/proto/helper;helper";
 package helper;
 
 enum MsgType {

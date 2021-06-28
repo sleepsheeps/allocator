@@ -1,9 +1,10 @@
 syntax = "proto3";
-option go_package="./common;common";
+option go_package="github.com/sleepsheeps/allocator/proto/common;common";
+import "helper.proto";
 package common;
 
 message Transformation {
-  uint32 msgType=1;
+  helper.MsgType msgType=1;
   bytes msgContent=2;
 }
 

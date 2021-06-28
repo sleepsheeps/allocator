@@ -1,4 +1,4 @@
-package proto
+package protos
 
 import (
 	"github.com/golang/protobuf/proto"
@@ -7,13 +7,19 @@ import (
 )
 
 var (
-	register = map[helper.MsgType]proto.Message{
+	register = map[helper.MsgType]MyProto{
 		helper.MsgType_Transformation: &common.Transformation{},
 		helper.MsgType_HeartBeat:      &common.Heartbeat{},
 	}
 )
 
-func NewMsg(msgType helper.MsgType) (proto.Message, bool) {
+type MyProto interface {
+	proto.Message
+	MarshalTo(dAtA []byte) (int, error)
+	Unmarshal(dAtA []byte) error
+}
+
+func NewMsg(msgType helper.MsgType) (MyProto, bool) {
 	msg, ok := register[msgType]
 	if !ok {
 		return nil, false
