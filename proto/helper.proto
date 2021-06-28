@@ -1,7 +1,8 @@
 syntax = "proto3";
-option go_package="/helper";
+option go_package="./helper;helper";
 package helper;
 
 enum MsgType {
     HeartBeat = 0;
+    Transformation =1;
 }
